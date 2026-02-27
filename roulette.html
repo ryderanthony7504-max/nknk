@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Simple Roulette</title>
+    <link rel="stylesheet" href="roulette.css" />
+  </head>
+  <body>
+    <main class="table">
+      <section class="game-switcher-wrap" aria-label="Game switcher">
+        <label for="game-switcher" class="switcher-label">Game</label>
+        <select id="game-switcher" class="game-switcher">
+          <option value="blackjack">Blackjack</option>
+          <option value="roulette">Roulette</option>
+        </select>
+      </section>
+
+      <h1>🎡 Simple Roulette</h1>
+      <p class="subtitle">Pick a number or color, place your chips, and spin.</p>
+
+      <section class="bankroll" aria-label="Chip and bet controls">
+        <p id="chips" class="chips">Chips: 1000</p>
+        <p id="current-bet" class="bet">Current Bet: 0</p>
+        <p id="selected-pocket" class="bet">Selected Bet: None</p>
+
+        <div class="chip-buttons" aria-label="Bet amount buttons">
+          <button class="chip-btn" data-bet="10" type="button">10</button>
+          <button class="chip-btn" data-bet="50" type="button">50</button>
+          <button class="chip-btn" data-bet="100" type="button">100</button>
+          <button class="chip-btn" data-bet="200" type="button">200</button>
+          <button class="chip-btn" data-bet="500" type="button">500</button>
+        </div>
+      </section>
+
+      <section class="status-card" aria-live="polite">
+        <p id="status">Select a number or color option, then click “Place Bet”.</p>
+      </section>
+
+      <section class="roulette-board" aria-label="Roulette pockets">
+        <h2>Roulette Pockets</h2>
+        <div id="pockets" class="pockets-grid"></div>
+
+        <div class="outside-bets" aria-label="Outside color bets">
+          <button id="bet-red" class="outside-btn red" type="button">All on Red</button>
+          <button id="bet-black" class="outside-btn black" type="button">All on Black</button>
+        </div>
+      </section>
+
+      <section class="controls">
+        <button id="place-bet" type="button">Place Bet</button>
+        <button id="spin" type="button" disabled>Spin</button>
+        <button id="clear-bet" type="button">Clear Bet</button>
+        <button id="recharge" type="button" disabled>Recharge to 1000</button>
+      </section>
+    </main>
+
+    <script src="roulette.js"></script>
+  </body>
+</html>
