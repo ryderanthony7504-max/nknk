@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Simple Blackjack</title>
+    <link rel="stylesheet" href="blackjack.css" />
+  </head>
+  <body>
+    <main class="table">
+      <section class="game-switcher-wrap" aria-label="Game switcher">
+        <label for="game-switcher" class="switcher-label">Game</label>
+        <select id="game-switcher" class="game-switcher">
+          <option value="blackjack">Blackjack</option>
+          <option value="roulette">Roulette</option>
+        </select>
+      </section>
+
+      <h1>♠ Simple Blackjack ♥</h1>
+      <p class="subtitle">Beat the dealer without going over 21.</p>
+
+      <section class="bankroll" aria-label="Betting controls">
+        <p id="chips" class="chips">Chips: 1000</p>
+        <p id="bet" class="bet">Current Bet: 0</p>
+        <div class="chip-buttons">
+          <button class="chip-btn" data-bet="10" type="button">+10</button>
+          <button class="chip-btn" data-bet="50" type="button">+50</button>
+          <button class="chip-btn" data-bet="100" type="button">+100</button>
+          <button class="chip-btn" data-bet="200" type="button">+200</button>
+          <button id="clear-bet" type="button">Clear Bet</button>
+          <button id="recharge" type="button" disabled>Recharge to 1000</button>
+        </div>
+      </section>
+
+      <section class="status-card" aria-live="polite">
+        <p id="status">Place a bet, then press “Deal”.</p>
+      </section>
+
+      <section class="hands" aria-label="Blackjack hands">
+        <article class="hand dealer-hand">
+          <h2>Dealer</h2>
+          <p id="dealer-cards" class="cards">-</p>
+          <p id="dealer-score" class="score">Score: ?</p>
+        </article>
+
+        <article class="hand" id="player-hand-1-card">
+          <h2>You - Hand 1</h2>
+          <p id="player-cards-1" class="cards">-</p>
+          <p id="player-score-1" class="score">Score: 0 | Bet: 0</p>
+        </article>
+
+        <article class="hand" id="player-hand-2-card">
+          <h2>You - Hand 2</h2>
+          <p id="player-cards-2" class="cards">-</p>
+          <p id="player-score-2" class="score">Score: 0 | Bet: 0</p>
+        </article>
+      </section>
+
+      <section class="controls">
+        <button id="new-round">Deal</button>
+        <button id="hit" disabled>Hit</button>
+        <button id="stand" disabled>Stand</button>
+        <button id="split" disabled>Split</button>
+        <button id="double" disabled>Double Down</button>
+        <button id="all-in" disabled>All In</button>
+      </section>
+    </main>
+
+    <script src="blackjack.js"></script>
+  </body>
+</html>
